@@ -1,0 +1,24 @@
+import csv
+import sys
+
+database = sys.argv[1]
+textFile = sys.argv[2]
+
+f = open(database, 'r')
+line = f.readline()
+f.close()
+
+f2 = open(textFile, 'r')
+inputFile = f2.readline()
+f2.close
+
+listInput = line.split(",")
+print(listInput[1])
+
+for i in range(len(listInput)):
+    count = inputFile.count(listInput[i].replace('\n', ''))
+    print (count)
+
+# First, get input about which databse to use. Then, based on that databse, go the the first line and and take all the values.
+# Put those in a list. Then, for every item in the list that isn't name, use .count to find the number of occurences in the text file.
+# Finally, match the number of occurences to the databse and print the name.
